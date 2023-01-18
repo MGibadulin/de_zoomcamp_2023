@@ -1,1 +1,26 @@
-README.md
+## Running Postgres and pgAdmin together, Docker-compose
+Run it:
+```
+docker-compose up
+```
+
+## Data ingestion
+Building image
+```
+docker build -t data_ingest:v001 .
+```
+
+Run the script with Docker
+
+```
+docker run -it \
+  --network=1_docker_sql_default \
+  data_ingest:v001 \
+    --user=root \
+    --password=root \
+    --host=pg-database \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name_1=taxi_trips \
+    --table_name_2=zones
+```
