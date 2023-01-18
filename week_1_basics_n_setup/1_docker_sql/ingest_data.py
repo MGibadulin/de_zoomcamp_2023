@@ -73,7 +73,7 @@ def main(params):
 
 
 if __name__ == '__main__':
-    
+
     # Parse the command line arguments and calls the main program
     parser = argparse.ArgumentParser(description='Ingest CSV data to Postgres')
 
@@ -84,7 +84,6 @@ if __name__ == '__main__':
     parser.add_argument('--db', help='database name for postgres')
     parser.add_argument('--table_name_1', help='name of the table for trips')
     parser.add_argument('--table_name_2', help='name of the table for zones')
-    #parser.add_argument('--url', help='url of the csv file')
 
     args = parser.parse_args()
 
