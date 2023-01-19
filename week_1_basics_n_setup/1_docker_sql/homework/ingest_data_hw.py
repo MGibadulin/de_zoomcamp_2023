@@ -41,10 +41,15 @@ def main(params):
     # fix type of columns
     df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
     df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
-
+    
+    print(f"create table '{table_name_trip}'")
     df.head(n=0).to_sql(name=table_name_trip, con=engine, if_exists='replace')
-
+    
+    t_start = time()
     df.to_sql(name=table_name_trip, con=engine, if_exists='append')
+    t_end = time()
+
+    print('inserted first chunk, took %.3f second' % (t_end - t_start))
 
     while True: 
 
