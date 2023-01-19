@@ -22,5 +22,4 @@ docker run -it \
     --port=5432 \
     --db=ny_taxi \
     --table_name_1=taxi_trips \
-    --table_name_2=zones
 ```
