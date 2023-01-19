@@ -69,7 +69,7 @@ def main(params):
     # zones
     print("Start ingesting zone data into the postgres database")
     df = pd.read_csv(csv_name_zone)
-    df.to_sql(name=table_name_zone, con=engine, if_exists='append')
+    df.to_sql(name=table_name_zone, con=engine, if_exists='replace')
     print("Finished ingesting zone data into the postgres database")
     
 if __name__ == '__main__':
