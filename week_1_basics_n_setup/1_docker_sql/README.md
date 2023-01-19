@@ -13,6 +13,7 @@ docker build -t data_ingest:v001 .
 Run the script with Docker
 
 ```
+URL = <link to file.csv>
 docker run -it \
   --network=postgres \
   data_ingest:v001 \
@@ -22,4 +23,5 @@ docker run -it \
     --port=5432 \
     --db=ny_taxi \
     --table_name_1=taxi_trips \
+    --url=${URL}
 ```
