@@ -14,7 +14,7 @@ Run the script with Docker
 
 ```
 docker run -it \
-  --network=1_docker_sql_default \
+  --network=postgres \
   data_ingest:v001 \
     --user=root \
     --password=root \
