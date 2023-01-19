@@ -18,7 +18,7 @@ docker run -it \
   data_ingest:v001 \
     --user=root \
     --password=root \
-    --host=pg-database \
+    --host=pgdatabase \
     --port=5432 \
     --db=ny_taxi \
     --table_name_1=taxi_trips \
