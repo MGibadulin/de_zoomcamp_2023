@@ -27,8 +27,8 @@ def main(params):
     csv_name_zone = 'zone.csv'
 
     # save data on local storage
-    os.system(f"wget {url} -O {csv_name_trip}")
-    os.system(f"wget {url} -O {csv_name_zone}")
+    os.system(f"wget {url_trip_data } -O {csv_name_trip}")
+    os.system(f"wget {url_zone_data} -O {csv_name_zone}")
 
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
@@ -39,8 +39,8 @@ def main(params):
     df = next(df_iter)
     
     # fix type of columns
-    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
-    df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+    df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
+    df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
     
     print(f"create table '{table_name_trip}'")
     df.head(n=0).to_sql(name=table_name_trip, con=engine, if_exists='replace')
@@ -58,8 +58,8 @@ def main(params):
             
             df = next(df_iter)
 
-            df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
-            df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+            df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
+            df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
 
             df.to_sql(name=table_name_trip, con=engine, if_exists='append')
 

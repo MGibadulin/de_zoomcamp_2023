@@ -1,7 +1,7 @@
 ## Running Postgres and pgAdmin together, Docker-compose
 Run it:
 ```
-docker-compose up
+docker compose up
 ```
 
 ## Data ingestion
