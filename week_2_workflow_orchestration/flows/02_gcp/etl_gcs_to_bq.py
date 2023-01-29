@@ -3,6 +3,7 @@ import pandas as pd
 from prefect import flow, task
 from prefect_gcp.cloud_storage import GcsBucket
 from prefect_gcp import GcpCredentials
+from creds import GCP_PROJECT_ID 
 
 
 @task(retries=3)
@@ -34,7 +35,7 @@ def write_bq(df: pd.DataFrame) -> None:
 
     df.to_gbq(
         destination_table="dezoomcamp.rides",
-        project_id="prefect-sbx-community-eng", # fix it 
+        project_id=GCP_PROJECT_ID,
         credentials=gcp_credentials_block.get_credentials_from_service_account(),
         chunksize=500_000,
         if_exists="append",
