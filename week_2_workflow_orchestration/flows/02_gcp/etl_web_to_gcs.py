@@ -8,7 +8,7 @@ from prefect_gcp.cloud_storage import GcsBucket
 def fetch(dataset_url: str) -> pd.DataFrame:
     """Read taxi data from web into pandas DataFrame"""
 
-    df = pd.read_csv(dataset_url)
+    df = pd.read_csv(dataset_url, low_memory=False)
     return df
 
 
