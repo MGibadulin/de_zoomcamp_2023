@@ -1,8 +1,8 @@
 # Question 1
-'''
+```SQL
 SELECT count(1) FROM `evident-syntax-375104.dbt_week4.fact_trips`
 WHERE DATE(pickup_datetime) BETWEEN '2019-01-01' AND '2020-12-31';
-'''
+```
 Answer 61635151
 
 # Question 2
