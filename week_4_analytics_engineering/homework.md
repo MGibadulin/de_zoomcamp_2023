@@ -6,6 +6,7 @@ WHERE DATE(pickup_datetime) BETWEEN '2019-01-01' AND '2020-12-31';
 Answer 61541073. Choosen 61648442
 
 # Question 2
+![Q2](ttps://github.com/MGibadulin/de_zoomcamp_2023/blob/main/week_4_analytics_engineering/Q2.png?raw=true)
 Answer 89.8/10.2. Choosen 89.9/10.1
 
 
