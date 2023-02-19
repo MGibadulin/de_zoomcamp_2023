@@ -7,6 +7,7 @@ Answer 61541073. Choosen 61648442
 
 # Question 2
 ![Q2](Q2.png)
+
 Answer 89.8/10.2. Choosen 89.9/10.1
 
 
@@ -25,4 +26,6 @@ WHERE DATE(pickup_datetime) BETWEEN '2019-01-01' AND '2019-12-31';
 Answer 22998722. Choosen 22998722
 
 # Question 5
+![Q2](Q5.png)
+
 Answer January
