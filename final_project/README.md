@@ -12,8 +12,8 @@ Source files are public and has CSV format. Files updated daily, with a delay of
 The orchestration framework Prefect with Python script ingest data once a day and saves the files localy.
 ## Pre-processing
 Prefect with Python processing files localy and load the parquet files to Cloud Storage:
+- Drop Unused Columns
 - Rename Columns
-- Data Types
 - Check NULL
 - Fillout NULL
 - Change Types
