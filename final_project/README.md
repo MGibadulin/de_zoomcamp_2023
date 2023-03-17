@@ -6,7 +6,7 @@ This is a simple project that takes historical data on solar and wind energy pro
 ![Data Pipeline](https://github.com/MGibadulin/de_zoomcamp_2023/blob/main/final_project/DataPipeline.png)
 ## Source
 Source files are public and has CSV format. Files updated daily, with a delay of one day. 
-- [Dataset Wind Energy](https://ds.50hertz.com/api/WindPowerForecast/DownloadFile?fileName=2023.csv)
+- [Dataset Wind Energy](https://ds.50hertz.com/api/WindPowerActual/DownloadFile?fileName=2023.csv)
 - [Dataset Solar Energy](https://ds.50hertz.com/api/PhotovoltaicActual/DownloadFile?fileName=2023.csv)
 ## Ingestion
 The orchestration framework Prefect with Python script ingest data once a day and saves the files localy.
