@@ -3,7 +3,7 @@ This folder contains my project for the Data Engineering Zoomcamp.
 # Project Description
 This is a simple project that takes historical data on solar and wind energy production in Germany in the "50 hertz zone" from 2011 to the present.  And transform them for visualisation and use by data scientists to predict how much energy will be produced in the next period of time.
 # Data Pipeline
-Picture and description
+![Data Pipeline](https://github.com/MGibadulin/de_zoomcamp_2023/blob/main/final_project/DataPipeline.png)
 ## Source
 Source files are public and has CSV format. Files updated daily, with a delay of one day. 
 - [Dataset Wind Energy](https://ds.50hertz.com/api/WindPowerForecast/DownloadFile?fileName=2023.csv)
