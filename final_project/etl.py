@@ -6,7 +6,7 @@ from prefect import flow, task
 from prefect_gcp.bigquery import bigquery_load_cloud_storage
 from prefect_gcp.cloud_storage import GcsBucket
 from prefect_gcp import GcpCredentials
-from google.cloud import bigquery
+#from google.cloud import bigquery
 
 
 @task(log_prints=True, retries=2)
@@ -212,9 +212,9 @@ def write_gcs(path: Path):
         
     """
     gcs_bucket_block = GcsBucket.load("solar-wind-bucket")
-    gcs_bucket_block.upload_from_path(from_path=path, to_path=path)
+    gcs_bucket_block.upload_from_path(from_path=path)
 
-@task(log_prints=True)
+@flow(log_prints=True)
 def bq_load_cs(bq_table: str):
     """
     Loads Parquet files from a Google Cloud Storage bucket to a BigQuery 
@@ -232,17 +232,15 @@ def bq_load_cs(bq_table: str):
     
     gcp_credentials_block = GcpCredentials.load("solar-wind-cred")
 
-    job_config = bigquery.LoadJobConfig(source_format=bigquery.SourceFormat.PARQUET, 
-                                        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
-                                        )
-
     result = bigquery_load_cloud_storage(
         dataset="solar_wind",
         table=f"{bq_table}_energy",
         uri=f"gs://data_solar_wind/{bq_table}_*.parquet",
         gcp_credentials=gcp_credentials_block,
-        #gcp_credentials=gcp_credentials_block.get_credentials_from_service_account(),
-        job_config=job_config,
+        job_config={
+                "source_format": "PARQUET",
+                "write_disposition": "WRITE_TRUNCATE",
+            },
         location='US'
         )
     return result
@@ -287,7 +285,7 @@ def solar_energy_flow(curent_year: int):
     
     _ = bq_load_cs("solar")
     
-    delete_file(solar_path)
+    # delete_file(solar_path)
 
 @flow()
 def wind_energy_flow(curent_year: int):
@@ -331,7 +329,7 @@ def wind_energy_flow(curent_year: int):
     
     _ = bq_load_cs("wind")
     
-    delete_file(wind_path)
+    # delete_file(wind_path)
 
 @flow()
 def main_flow(curent_year: int):
