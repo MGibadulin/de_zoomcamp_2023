@@ -26,7 +26,7 @@ Data Build Tool transformes, summarises, checks data consistency and calculates 
 ![Lineage](https://github.com/MGibadulin/de_zoomcamp_2023/blob/main/final_project/lineage.jpg)
 ![Lineage](https://github.com/MGibadulin/de_zoomcamp_2023/blob/main/final_project/tables.jpg)
 ## Analytics
-Looker Studio get data direct from BigQuery and presents on the [Dashboard](https://lookerstudio.google.com/u/0/reporting/e95dcf61-e094-4530-be86-f1e1fe23fe25/page/2rgLD)
+Looker Studio get data direct from BigQuery and presents on the [Dashboard](https://lookerstudio.google.com/reporting/e95dcf61-e094-4530-be86-f1e1fe23fe25)
 
 
 # Used Technologies and Tools
