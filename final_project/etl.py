@@ -66,7 +66,7 @@ def generate_timestamp(energy_dataframe: pd.DataFrame, date_time_columns: List[s
     """
     print("Start Generate Timestamp")
     energy_dataframe["timestamp"] = pd.to_datetime(energy_dataframe[date_time_columns]
-                                                .agg(" ".join, axis=1), format="%d.%m.%Y %h:%M")
+                                                .agg(" ".join, axis=1), format="%d.%m.%Y %H:%M")
     print("Generate Timestamp Complete")
 
 @task(log_prints=True)
