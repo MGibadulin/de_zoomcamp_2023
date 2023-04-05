@@ -1,6 +1,6 @@
 {{ config(materialized='table',
             partition_by={
-                "field": "timestamp",
+                "field": "ts",
                 "data_type": "timestamp",
                 "granularity": "month"
             },
