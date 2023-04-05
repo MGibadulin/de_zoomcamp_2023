@@ -22,7 +22,7 @@ Prefect with Python processing files localy and load the parquet files to Cloud 
 ## Data Lake
 Prefect with Python creates external tables from data from GCS in DWH BigQuery.
 ## Data Warehouse
-Data Build Tool transformes, summarises, checks data consistency and calculates metrics for further visualization. The result is the table that is partitioned by month and clustered by energy type.
+Data Build Tool transformes, summarises, checks data consistency and calculates metrics for further visualization. The result is the table that is partitioned by month.
 ## Analytics
 Looker Studio get data direct from BigQuery and presents on the [Dashboard](.). 
 
